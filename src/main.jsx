@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { ArrowUpRight, AtSign, BrainCircuit, Check, Cloud, Code2, Database, Download, ExternalLink, Globe, Mail, Menu, Network, Phone, X, Zap } from 'lucide-react'
 import './styles.css'
 
-const resumeFile = '/Prashant_Kalambe_Resume_System_Design.pdf'
+const resumeFile = `${import.meta.env.BASE_URL}Prashant_Kalambe_Resume_System_Design.pdf`
 const experience = [
   { period: 'Jun 2026 — Present', company: 'Cyient', role: 'Senior Full Stack Developer', project: 'John Deere · BM E-commerce Platform', tech: 'Java · Spring Boot · AWS · MySQL · React.js · Spring AI', summary: 'Leading full-stack development for catalog, cart, and checkout experiences across a cloud-native commerce platform.', points: ['Designing scalable REST APIs and MySQL data models from business requirements.', 'Building reusable React interfaces integrated with Spring Boot services.', 'Exploring Spring AI and GenAI for intelligent product recommendations.'] },
   { period: 'Apr 2024 — Jun 2026', company: 'Tata Consultancy Services', role: 'System Engineer', project: 'Stellantis · Dealer Service Data Integration', tech: 'Java · Spring Boot · AWS · MySQL · React.js · Spring AI', summary: 'Built the event-driven integration layer that moves dealer service data reliably through enterprise systems.', points: ['Built AWS pipelines with Lambda, API Gateway, RDS, SNS, and SQS.', 'Designed for high availability, scalable processing, and reduced latency.', 'Implemented JUnit 5 and Mockito automation, achieving 80%+ test coverage.'] },
