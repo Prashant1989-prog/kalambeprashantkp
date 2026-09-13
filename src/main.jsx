@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ArrowUpRight, AtSign, BrainCircuit, Check, Cloud, Code2, Database, Download, ExternalLink, Globe, Mail, Menu, Network, Phone, X, Zap } from 'lucide-react'
+import { ArrowUpRight, AtSign, BrainCircuit, Check, Cloud, Code2, Database, Download, Globe, Mail, Menu, Network, Phone, X, Zap } from 'lucide-react'
 import './styles.css'
 
 const resumeFile = `${import.meta.env.BASE_URL}Prashant_Kalambe_Resume_System_Design.pdf`
@@ -20,6 +20,7 @@ const skills = [
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const closeMenu = () => setMenuOpen(false)
+
   return <div className="site-shell">
     <header className="topbar"><a className="wordmark" href="#top" onClick={closeMenu}><span>PK</span> / profile</a><button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">{menuOpen ? <X size={20} /> : <Menu size={20} />}</button><nav className={menuOpen ? 'nav-links is-open' : 'nav-links'}><a href="#work" onClick={closeMenu}>Work</a><a href="#capabilities" onClick={closeMenu}>Capabilities</a><a href="#about" onClick={closeMenu}>About</a><a className="nav-contact" href="mailto:kalambeprashantkp@gmail.com" onClick={closeMenu}>Let's connect <ArrowUpRight size={15} /></a></nav></header>
     <main id="top">
@@ -30,7 +31,8 @@ function App() {
       <section className="capabilities section-grid" id="capabilities"><div className="section-index">04 / TOOLKIT</div><div className="capabilities-content"><div className="section-heading"><p className="section-kicker">How I work</p><h2>Built for the<br /><span>real world.</span></h2></div><div className="skill-grid">{skills.map(({ icon: Icon, label, items }) => <div className="skill-block" key={label}><Icon size={20} strokeWidth={1.5} /><h3>{label}</h3><p>{items.join(' · ')}</p></div>)}</div></div></section>
       <section className="contact section-grid"><div className="section-index">05 / NEXT MOVE</div><div className="contact-content"><p className="section-kicker">Have a hard problem?</p><h2>Let's make it<br /><em>work beautifully.</em></h2><a className="email-link" href="mailto:kalambeprashantkp@gmail.com">kalambeprashantkp@gmail.com <ArrowUpRight size={22} /></a></div></section>
     </main>
-    <footer><span>© 2026 Prashant Kalambe</span><span>Senior Full Stack Developer</span><div className="socials"><a href="mailto:kalambeprashantkp@gmail.com" aria-label="Email"><Mail size={17} /></a><a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn"><AtSign size={17} /></a><a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub"><Globe size={17} /></a><a href="tel:+918459747041" aria-label="Phone"><Phone size={17} /></a></div></footer>
+    <footer><span>© 2026 Prashant Kalambe</span><img className="visitor-badge" src="https://api.visitorbadge.io/api/visitors?path=prashant1989-prog.github.io%2Fkalambeprashantkp&label=Visitors&labelColor=%23172421&countColor=%23ef774f&style=flat" alt="Website visitor count" /><span>Senior Full Stack Developer</span><div className="socials"><a href="mailto:kalambeprashantkp@gmail.com" aria-label="Email"><Mail size={17} /></a><a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn"><AtSign size={17} /></a><a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub"><Globe size={17} /></a><a href="tel:+918459747041" aria-label="Phone"><Phone size={17} /></a></div></footer>
+    <footer><span>© 2026 Prashant Kalambe</span><span className="visitor-count"><Users size={14} /> {visitorCount ?? '—'} visitors</span><span>Senior Full Stack Developer</span><div className="socials"><a href="mailto:kalambeprashantkp@gmail.com" aria-label="Email"><Mail size={17} /></a><a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn"><AtSign size={17} /></a><a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub"><Globe size={17} /></a><a href="tel:+918459747041" aria-label="Phone"><Phone size={17} /></a></div></footer>
   </div>
 }
 export default App
